@@ -1,9 +1,10 @@
 import sys
 from pathlib import Path
-sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from algo_bot.strategy.iron_condor import IronCondorStrategy
-from algo_bot.config.config import StrategyConfig
-from algo_bot.broker.dummy_broker import DummyBroker
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))  # noqa: E402
+from algo_bot.strategy.iron_condor import IronCondorStrategy  # noqa: E402
+from algo_bot.config.config import StrategyConfig  # noqa: E402
+from algo_bot.broker.dummy_broker import DummyBroker  # noqa: E402
 
 
 def test_strategy_signal_generation():

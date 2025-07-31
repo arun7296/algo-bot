@@ -11,7 +11,10 @@ class RegimeThresholds:
     high: float = 35.0
 
 
-def detect_regime(vix: float, thresholds: RegimeThresholds | None = None) -> str:
+def detect_regime(
+    vix: float,
+    thresholds: RegimeThresholds | None = None,
+) -> str:
     """Return market regime string given VIX value."""
     th = thresholds or RegimeThresholds()
     if vix < th.low:

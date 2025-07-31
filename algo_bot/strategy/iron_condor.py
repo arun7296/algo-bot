@@ -23,10 +23,12 @@ class IronCondorStrategy(Strategy):
         self.broker = broker
         self.state = IronCondorState(open_positions=[])
         self.regime_detector = MarketRegimeDetector()
-        
+
     def generate_signals(self, market_data: Any) -> Any:
         regime = self.regime_detector.update(market_data)
-        params: Dict[str, Any] = self.config.regimes.get(regime, {}) if self.config.regimes else {}
+        params: Dict[str, Any] = (
+            self.config.regimes.get(regime, {}) if self.config.regimes else {}
+        )
         target_delta = params.get("target_delta", self.config.target_delta)
         width = params.get("width", self.config.width)
         signal = {

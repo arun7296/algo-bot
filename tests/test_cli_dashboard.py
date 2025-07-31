@@ -1,9 +1,10 @@
 import sys
 from pathlib import Path
-sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from algo_bot.ui.cli_dashboard import CLIDashboard
-from algo_bot.backtesting.backtester import Backtester
-from algo_bot.config.config import parse_config, load_config
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))  # noqa: E402
+from algo_bot.ui.cli_dashboard import CLIDashboard  # noqa: E402
+from algo_bot.backtesting.backtester import Backtester  # noqa: E402
+from algo_bot.config.config import parse_config, load_config  # noqa: E402
 
 
 def test_dashboard_table(tmp_path):

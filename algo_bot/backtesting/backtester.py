@@ -6,6 +6,7 @@ from ..config.config import Config
 from ..risk.risk_manager import RiskManager
 from ..utils.logging import get_logger
 
+
 class Backtester:
     """Simple backtester stub."""
 

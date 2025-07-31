@@ -17,19 +17,20 @@ def _env_interpolate(value: str) -> str:
         end = value.find("}", start)
         if start == -1 or end == -1:
             break
-        expr = value[start + 2 : end]
+        expr = value[start + 2:end]
         if ':-' in expr:
             var, default = expr.split(':-', 1)
         else:
             var, default = expr, ''
         repl = os.getenv(var, default)
-        value = value[:start] + repl + value[end + 1 :]
+        value = value[:start] + repl + value[end + 1:]
     return value
 
 
 def load_config(path: str | Path) -> Dict[str, Any]:
     with open(path, "r") as f:
         data = yaml.safe_load(f)
+
     def recurse(obj):
         if isinstance(obj, dict):
             return {k: recurse(v) for k, v in obj.items()}
@@ -40,7 +41,10 @@ def load_config(path: str | Path) -> Dict[str, Any]:
     return recurse(data)
 
 
-def apply_overrides(data: Dict[str, Any], overrides: List[str]) -> Dict[str, Any]:
+def apply_overrides(
+    data: Dict[str, Any],
+    overrides: List[str],
+) -> Dict[str, Any]:
     """Apply CLI key=value overrides to the loaded config dict."""
     for item in overrides:
         if "=" not in item:

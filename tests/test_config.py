@@ -1,7 +1,12 @@
 import sys
 from pathlib import Path
-sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from algo_bot.config.config import load_config, parse_config, apply_overrides
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))  # noqa: E402
+from algo_bot.config.config import (  # noqa: E402
+    load_config,
+    parse_config,
+    apply_overrides,
+)
 
 
 def test_load_config(tmp_path):

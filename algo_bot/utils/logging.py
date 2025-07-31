@@ -3,7 +3,10 @@ from logging.handlers import RotatingFileHandler
 from typing import Optional
 
 
-def setup_logging(log_file: str = "algo_bot.log", level: int = logging.INFO) -> None:
+def setup_logging(
+    log_file: str = "algo_bot.log",
+    level: int = logging.INFO,
+) -> None:
     """Configure root logger with console and rotating file handler."""
     logger = logging.getLogger()
     logger.setLevel(level)

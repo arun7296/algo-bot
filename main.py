@@ -16,7 +16,10 @@ def main() -> None:
         "--override",
         action="append",
         default=[],
-        help="Override config values, e.g. --override strategy.target_delta=0.3",
+        help=(
+            "Override config values, e.g. "
+            "--override strategy.target_delta=0.3"
+        ),
     )
     parser.add_argument(
         "--cli-dashboard",
