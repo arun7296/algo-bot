@@ -1,14 +1,10 @@
 from __future__ import annotations
-
-from typing import Any
-
 from ..broker.dummy_broker import DummyBroker
 from ..data.market_data import MarketDataClient
 from ..strategy.iron_condor import IronCondorStrategy
 from ..config.config import Config
 from ..risk.risk_manager import RiskManager
 from ..utils.logging import get_logger
-
 
 class Backtester:
     """Simple backtester stub."""

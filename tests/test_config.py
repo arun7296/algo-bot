@@ -1,4 +1,6 @@
-import sys, pathlib; sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from algo_bot.config.config import load_config, parse_config, apply_overrides
 
 
