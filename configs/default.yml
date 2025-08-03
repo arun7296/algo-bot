@@ -1,0 +1,27 @@
+app:
+  log_file: ${LOG_FILE:-algo_bot.log}
+  log_level: INFO
+broker:
+  name: dummy
+  api_key: ${BROKER_API_KEY:-your_api_key}
+  api_secret: ${BROKER_API_SECRET:-your_secret}
+strategy:
+  name: iron_condor
+  target_delta: 0.2
+  width: 100
+  regimes:
+    low:
+      target_delta: 0.25
+      width: 150
+    normal:
+      target_delta: 0.2
+      width: 100
+    high:
+      target_delta: 0.15
+      width: 75
+    extreme:
+      target_delta: 0.1
+      width: 50
+risk:
+  max_position_size: 100000
+  max_drawdown: 0.1
